@@ -9,7 +9,7 @@ use App\Models\Employee;
 use App\Models\OpdSales;
 use App\Models\Hospital;
 
-class doctorController extends Controller
+class DoctorController extends Controller
 {
     public function __construct()
     {

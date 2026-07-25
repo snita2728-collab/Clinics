@@ -217,7 +217,7 @@ $(document).ready(function() {
             width: 280px;
             min-width: 280px;
             height: 100vh;
-            background-color: rgb(92, 148, 240);
+            background-color: rgb(41, 186, 109);
             color: #ffffff;
             position: fixed;
             left: 0;
@@ -235,7 +235,7 @@ $(document).ready(function() {
             display: flex;
             align-items: center;
             padding: 0 24px;
-            border-bottom: 1px solid #23379a;
+            border-bottom: 1px solid #2a5fad;
             transition: all 0.3s ease;
         }
 
@@ -274,7 +274,7 @@ $(document).ready(function() {
             overflow-y: auto;
             overflow-x: hidden;
             scrollbar-width: thin;
-            scrollbar-color: #2357cf rgba(37, 112, 173, 0.2);
+            scrollbar-color: #065f35 rgba(37, 112, 173, 0.2);
         }
 
         /* Custom sidebar menu scrollbar for webkit browsers */
@@ -286,11 +286,11 @@ $(document).ready(function() {
             border-radius: 3px;
         }
         .sidebar-menu::-webkit-scrollbar-thumb {
-            background: #5196e4;
+            background: #068162;
             border-radius: 3px;
         }
         .sidebar-menu::-webkit-scrollbar-thumb:hover {
-            background: #1d4aa2;
+            background: #0e5818;
         }
 
         .menu-item-single, .menu-item-group {
@@ -352,7 +352,7 @@ $(document).ready(function() {
             display: none;
             flex-direction: column;
             gap: 4px;
-            border-left: 1px solid #6f7fc6;
+            border-left: 1px solid #106f53;
         }
 
         .dropdown-menu-custom.open {
@@ -388,7 +388,7 @@ $(document).ready(function() {
         }
 
         .dropdown-menu-custom a:hover {
-            background-color: #5196e4;
+            background-color: #177431;
             color: #ffffff;
         }
 

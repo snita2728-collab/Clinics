@@ -1,4 +1,6 @@
 /php74
+/vendor
+/node_modules
 /php74full
 /node_modules
 /public/hot

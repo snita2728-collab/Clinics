@@ -940,3 +940,20 @@ h1.page-header {
 
 
 
+
+/* Custom Font Size Overrides */
+body, .panel-body, .widget-right, .text-muted, p, table, .form-control, .btn {
+    font-size: 16px !important;
+}
+
+.sidebar ul.nav a {
+    font-size: 16px !important;
+}
+
+.navbar-header .navbar-brand {
+    font-size: 22px !important;
+}
+
+.panel-heading {
+    font-size: 20px !important;
+}

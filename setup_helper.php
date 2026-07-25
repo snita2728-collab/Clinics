@@ -57,11 +57,11 @@ try {
     
     if (!$hasUsers) {
         echo "Database is new or empty. Running migrations and seeders...\n";
-        passthru('php74\\php.exe artisan migrate --force');
-        passthru('php74\\php.exe artisan db:seed --force');
+        passthru('php artisan migrate --force');
+        passthru('php artisan db:seed --force');
     } else {
         echo "Database already initialized with records. Skipping seeding to prevent duplicates.\n";
-        passthru('php74\\php.exe artisan migrate --force');
+        passthru('php artisan migrate --force');
     }
     
 } catch (PDOException $e) {
