@@ -60,7 +60,7 @@
 	    </div>
 		<div class=" col-md-4 form-group">
 			<label>Date of Birth:</label>
-			{!! Form::text('birth_date', null, array('class' => 'form-control' , 'id'=>'nepaliDate5')) !!}
+			{!! Form::date('birth_date', null, array('class' => 'form-control' , 'id'=>'birth_date')) !!}
 		</div>
 		<div class=" col-md-4 form-group">
 			<label>Age:</label>

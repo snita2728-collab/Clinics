@@ -45,10 +45,10 @@
 					<label>First Name:</label>
 				 	{!! Form::text('first_name', null, array('class' => 'form-control', 'required'=>'required')) !!}
 				</div>
-				<div class=" col-md-4 form-group">
+				<!--<div class=" col-md-4 form-group">
 					<label>Middle Name:</label>
 				 	{!! Form::text('middle_name', null, array('class' => 'form-control')) !!}
-				</div>
+				</div>-->
 				<div class=" col-md-4 form-group">
 					<label>Last Name:</label>
 				 	{!! Form::text('last_name', null, array('class' => 'form-control', 'required'=>'required')) !!}

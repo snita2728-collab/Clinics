@@ -77,11 +77,11 @@ Route::group(array('middleware'=>['auth']), function() {
 		Route::resource('role', 'RoleController');
 
 		//Package Route
-		Route::get('package', ['as'=>'package.index', 'uses'=>'PackageController@getIndex']);
-		Route::post('package', ['as'=>'package.store', 'uses'=>'PackageController@store']);
-		Route::post('package/edit', ['as'=>'package.edit', 'uses'=>'PackageController@edit']);
-		Route::post('package/test/delete', ['as'=>'package.test.delete', 'uses'=>'PackageController@packageTestDelete']);
-		Route::post('pacakge/delete', ['as'=>'package.delete', 'uses'=>'PackageController@delete']);
+		//Route::get('package', ['as'=>'package.index', 'uses'=>'PackageController@getIndex']);
+		//Route::post('package', ['as'=>'package.store', 'uses'=>'PackageController@store']);
+		//Route::post('package/edit', ['as'=>'package.edit', 'uses'=>'PackageController@edit']);
+		//Route::post('package/test/delete', ['as'=>'package.test.delete', 'uses'=>'PackageController@packageTestDelete']);
+		//Route::post('pacakge/delete', ['as'=>'package.delete', 'uses'=>'PackageController@delete']);
 
 		Route::post('appointment/updated',['as'=>'appointment.updated','uses'=>'AppointmentController@updated']);
 
@@ -101,10 +101,10 @@ Route::group(array('middleware'=>['auth']), function() {
 		Route::get('opd',['as'=>'opd.index', 'uses'=>'OpdController@getindex']);
 		Route::post('opd',['as'=>'opd.store', 'uses'=>'OpdController@store']);
 
-		Route::post('package/sale', ['as'=>'package.sale', 'uses'=>'PackageController@packageSale']);
+		//Route::post('package/sale', ['as'=>'package.sale', 'uses'=>'PackageController@packageSale']);
 
-		Route::get('package/sale',['as' => 'package.sale', 'uses' => 'PackageController@sale']);
-		Route::get('package/sale/{id}', ['as'=>'package.sales', 'uses'=>'PackageController@packageSales']);
+		//Route::get('package/sale',['as' => 'package.sale', 'uses' => 'PackageController@sale']);
+		//Route::get('package/sale/{id}', ['as'=>'package.sales', 'uses'=>'PackageController@packageSales']);
 		//Test Route
 		Route::get('test', ['as'=>'test.index','uses'=>'TestController@index']);
 		Route::post('test/{id}/status', ['as'=>'test.status', 'uses'=>'TestController@statusChange']);

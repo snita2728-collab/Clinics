@@ -18,6 +18,7 @@ class UsersSeeder extends Seeder
             ['email' => 'admin@admin.com'],
             [
                 'name'     => 'Superadmin',
+                'username' => 'Superadmin',
                 'password' => bcrypt('admin'),
                 'role_id'  => Role::find(1)->id,
             ]

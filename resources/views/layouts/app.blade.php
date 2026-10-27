@@ -121,12 +121,12 @@
             disableDaysAfter: '10'
         });
 
-        $('#nepaliDate5').nepaliDatePicker({
+       /* $('#nepaliDate5').nepaliDatePicker({
             npdMonth: true,
             npdYear: true,
 
 
-        });
+        });  */
         $('#nepaliDate').nepaliDatePicker({
             onFocus: false,
             npdMonth: true,
@@ -217,7 +217,7 @@ $(document).ready(function() {
             width: 280px;
             min-width: 280px;
             height: 100vh;
-            background-color: rgb(41, 186, 109);
+            background-color: #1769AA;
             color: #ffffff;
             position: fixed;
             left: 0;
@@ -225,7 +225,7 @@ $(document).ready(function() {
             z-index: 1000;
             display: flex;
             flex-direction: column;
-            box-shadow: 4px 0 25px 0 rgba(0, 0, 0, 0.05);
+            box-shadow: 4px 0 25px 0 rgba(23, 105, 170, 0.18);
             transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             overflow: hidden;
         }
@@ -235,7 +235,7 @@ $(document).ready(function() {
             display: flex;
             align-items: center;
             padding: 0 24px;
-            border-bottom: 1px solid #2a5fad;
+            border-bottom: 1px solid #3B82C4;
             transition: all 0.3s ease;
         }
 
@@ -251,7 +251,7 @@ $(document).ready(function() {
         .brand-text {
             font-family: 'Khmer OS Muol Light', 'Khmer OS Muol', 'Moul', sans-serif !important;
             font-weight: 500 !important;
-            font-size: 1.3rem;
+            font-size: 1.8rem;
             color: #ffffff;
             letter-spacing: 0.5px;
             line-height: 1.4;
@@ -274,7 +274,7 @@ $(document).ready(function() {
             overflow-y: auto;
             overflow-x: hidden;
             scrollbar-width: thin;
-            scrollbar-color: #065f35 rgba(37, 112, 173, 0.2);
+            scrollbar-color:#7DB7E8 rgba(37, 112, 173, 0.2);
         }
 
         /* Custom sidebar menu scrollbar for webkit browsers */
@@ -282,15 +282,15 @@ $(document).ready(function() {
             width: 6px;
         }
         .sidebar-menu::-webkit-scrollbar-track {
-            background: rgba(37, 112, 173, 0.1);
+            background: rgba(37, 112, 173, 0.15);
             border-radius: 3px;
         }
         .sidebar-menu::-webkit-scrollbar-thumb {
-            background: #068162;
+            background: #5FA8D3;
             border-radius: 3px;
         }
         .sidebar-menu::-webkit-scrollbar-thumb:hover {
-            background: #0e5818;
+            background: #0F4C81;
         }
 
         .menu-item-single, .menu-item-group {
@@ -307,25 +307,24 @@ $(document).ready(function() {
             color: rgba(255, 255, 255, 0.85);
             text-decoration: none !important;
             font-weight: 500;
-            font-size: 1.25rem;
+            font-size: 1.65rem;
             border-radius: 8px;
             transition: all 0.2s ease;
             cursor: pointer;
         }
 
         .menu-link:hover {
-            background-color: #109f6b;
+            background-color: #3B82C4;
             color: #ffffff;
         }
-
         .menu-link.active {
-            background-color: #0c7247;
+            background-color: #0F4C81;
             color: #ffffff;
-            box-shadow: 0 4px 12px rgba(12, 114, 71, 0.3);
+            box-shadow: 0 4px 12px rgba(15, 76, 129, 0.3);
         }
 
         .menu-link.active-parent {
-            background-color: #109f6b;
+            background-color: #256EA8;
             color: #ffffff;
         }
 
@@ -352,7 +351,7 @@ $(document).ready(function() {
             display: none;
             flex-direction: column;
             gap: 4px;
-            border-left: 1px solid #106f53;
+            border-left: 1px solid#4A90C2;
         }
 
         .dropdown-menu-custom.open {
@@ -369,7 +368,7 @@ $(document).ready(function() {
             display: block;
             padding: 9px 18px;
             color: rgba(255, 255, 255, 0.75);
-            font-size: 1.15rem;
+            font-size: 1.5rem;
             font-weight: 500;
             text-decoration: none !important;
             transition: all 0.15s ease;
@@ -384,16 +383,16 @@ $(document).ready(function() {
             top: 50%;
             width: 8px;
             height: 1px;
-            background-color: #146c48;
+            background-color: #72B7E8;
         }
 
         .dropdown-menu-custom a:hover {
-            background-color: #177431;
+            background-color:#2878B5;
             color: #ffffff;
         }
 
         .dropdown-menu-custom a.active {
-            color: #9065e1;
+            color: #DCEEFF;
             font-weight: 600;
             background-color: rgba(255, 255, 255, 0.08);
         }
@@ -493,7 +492,8 @@ $(document).ready(function() {
         /* Content Area */
         .app-content-area {
             flex-grow: 1;
-            margin-left: 280px;
+            min-width: 0;
+            margin-left: 270px ; //!important
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -521,9 +521,9 @@ $(document).ready(function() {
         .header-title {
             font-family: 'Khmer OS Muol Light', 'Khmer OS Muol', 'Moul', sans-serif !important;
             font-weight: 500 !important;
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             letter-spacing: 0.5px;
-            color: #2e7c5c;
+            color: #2878B5;
             text-transform: uppercase;
         }
 
@@ -806,7 +806,7 @@ $(document).ready(function() {
 
         /* Form and General controls styling to match increased fonts */
         label, .form-group label, .control-label, select, textarea, button, .btn {
-            font-size: 1.05rem !important;
+            font-size: 1.1rem !important;
         }
         .form-control, input[type="text"], input[type="email"], input[type="password"], input[type="number"], select {
             height: 44px !important;
@@ -944,8 +944,117 @@ $(document).ready(function() {
         .app-content-body textarea, 
         .app-content-body button, 
         .app-content-body .btn {
-            font-size: 1.05rem !important;
+            font-size: 1.5rem !important;
         }
+       
+    /* ===== BLUE THEME (ស្របតាម Sidebar) ===== */
+:root {
+    --c-primary:      #1769AA;  /* ពណ៌មេ = Sidebar */
+    --c-primary-dark: #0F4C81;  /* active / hover ខ្លាំង */
+    --c-primary-mid:  #256EA8;
+    --c-primary-soft: #3B82C4;
+    --c-primary-light:#DCEEFF;
+    --c-primary-bg:   #EAF4FD;  /* ផ្ទៃស្រាល */
+    --c-border:       #D6E4F0;
+    --c-text:         #1E3A52;
+}
+
+body, .app-content-area { background-color: #F1F6FB; }
+
+/* Header */
+.app-header-custom { border-bottom: 1px solid var(--c-border); }
+.header-title { color: var(--c-primary) !important; }
+.toggle-btn { color: var(--c-primary); }
+.toggle-btn:hover,
+.switcher-btn:hover,
+.user-profile-btn:hover,
+.user-dropdown-item:hover,
+.switcher-item:hover { background-color: var(--c-primary-bg); color: var(--c-primary-dark); }
+.switcher-item.active {
+    background-color: var(--c-primary-bg);
+    color: var(--c-primary);
+}
+.switcher-btn span[style*="#10b981"] { color: var(--c-primary) !important; }
+
+/* Panel */
+.panel { border: 1px solid var(--c-border) !important; }
+.panel-heading {
+    background: linear-gradient(135deg, var(--c-primary) 0%, var(--c-primary-mid) 100%) !important;
+    border-bottom: 1px solid var(--c-primary-dark) !important;
+    color: #fff !important;
+}
+
+/* តារាង */
+.table > thead > tr > th {
+    background-color: var(--c-primary-bg) !important;
+    color: var(--c-primary-dark) !important;
+    border-bottom: 2px solid var(--c-border) !important;
+}
+.table > tbody > tr > td { color: var(--c-text); border-top: 1px solid #EEF3F8 !important; }
+.table-hover > tbody > tr:hover,
+.table > tbody > tr:hover { background-color: #F5FAFE; }
+
+/* Breadcrumb / Title */
+.breadcrumb a { color: var(--c-primary); }
+.page-header { color: var(--c-primary-dark) !important; }
+
+/* ប៊ូតុង */
+.btn-primary {
+    background-color: var(--c-primary) !important;
+    border-color: var(--c-primary) !important;
+    box-shadow: 0 2px 4px rgba(23, 105, 170, 0.2) !important;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    background-color: var(--c-primary-dark) !important;
+    border-color: var(--c-primary-dark) !important;
+    box-shadow: 0 4px 8px rgba(15, 76, 129, 0.3) !important;
+}
+.btn-info {
+    background-color: var(--c-primary-soft) !important;
+    border-color: var(--c-primary-soft) !important;
+    color: #fff !important;
+}
+.btn-success { background-color: #16a34a !important; border-color: #16a34a !important; }
+.btn-default { border-color: var(--c-border) !important; color: var(--c-primary-dark); }
+.btn-default:hover { background-color: var(--c-primary-bg) !important; }
+
+/* Form */
+.form-control:focus, .select2-container--default.select2-container--focus .select2-selection--multiple,
+.select2-container--default .select2-selection--single:focus {
+    border-color: var(--c-primary) !important;
+    box-shadow: 0 0 0 3px rgba(23, 105, 170, 0.15) !important;
+}
+
+/* Dashboard cards */
+.panel-blue   { border-left: 4px solid var(--c-primary) !important; }
+.panel-blue .large   { color: var(--c-primary) !important; }
+.panel-teal   { border-left: 4px solid #0EA5C6 !important; }
+.panel-teal .large   { color: #0EA5C6 !important; }
+.panel-orange { border-left: 4px solid #F59E0B !important; }
+.panel-orange .large { color: #F59E0B !important; }
+.panel-red    { border-left: 4px solid #7C5CE0 !important; }
+.panel-red .large    { color: #7C5CE0 !important; }
+.panel-blue, .panel-teal, .panel-orange, .panel-red {
+    transition: transform .2s, box-shadow .2s;
+}
+.panel-blue:hover, .panel-teal:hover, .panel-orange:hover, .panel-red:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(23, 105, 170, 0.12) !important;
+}
+
+/* DataTables */
+.dataTables_wrapper .dataTables_length select:focus,
+.dataTables_wrapper .dataTables_filter input:focus {
+    border-color: var(--c-primary) !important;
+    box-shadow: 0 0 0 3px rgba(23, 105, 170, 0.15) !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background: var(--c-primary) !important;
+    border-color: var(--c-primary) !important;
+    color: #fff !important;
+}
+
     </style>
     <script>
         // Apply sidebar state immediately to prevent layout shift (flash)
@@ -995,9 +1104,9 @@ $(document).ready(function() {
                 <ul class="dropdown-menu-custom">
                     <li><a href="{{route('department.index')}}">{{ App::getLocale() === 'km' ? 'ផ្នែកគ្លីនិក' : 'Departments' }}</a></li>
                     <li><a href="{{route('service.index')}}">{{ App::getLocale() === 'km' ? 'សេវាកម្ម' : 'Services' }}</a></li>
-                    <li><a href="{{route('package.index')}}">{{ App::getLocale() === 'km' ? 'កញ្ចប់សេវា' : 'Packages' }}</a></li>
+                {{--    <li><a href="{{route('package.index')}}">{{ App::getLocale() === 'km' ? 'កញ្ចប់សេវា' : 'Packages' }}</a></li>  --}}
                     <li><a href="{{route('employee.index')}}">{{ App::getLocale() === 'km' ? 'បុគ្គលិក' : 'Employees' }}</a></li>
-                    <li><a href="{{route('doctor.index')}}">{{ App::getLocale() === 'km' ? 'វេជ្ជបណ្ឌិត OPD' : 'Doctor OPD' }}</a></li>
+                    <li><a href="{{route('doctor.index')}}">{{ App::getLocale() === 'km' ? 'វេជ្ជបណ្ឌិត ' : 'Doctor ' }}</a></li>
                     <li><a href="{{route('invoice.report')}}">{{ App::getLocale() === 'km' ? 'របាយការណ៍វិក្កយបត្រ' : 'Invoice Report' }}</a></li>
                 </ul>
             </li>
@@ -1032,7 +1141,7 @@ $(document).ready(function() {
                 <ul class="dropdown-menu-custom">
                     <li><a href="{{route('invoice.index')}}">{{ App::getLocale() === 'km' ? 'វិក្កយបត្រសេវាកម្ម' : 'Service Bill' }}</a></li>
                     <li><a href="{{route('opd.index')}}">{{ App::getLocale() === 'km' ? 'វិក្កយបត្រ OPD' : 'OPD Bill' }}</a></li>
-                    <li><a href="{{url('package/sale')}}">{{ App::getLocale() === 'km' ? 'វិក្កយបត្រកញ្ចប់' : 'Package Bill' }}</a></li>
+                {{--    <li><a href="{{url('package/sale')}}">{{ App::getLocale() === 'km' ? 'វិក្កយបត្រកញ្ចប់' : 'Package Bill' }}</a></li> --}}
                     @permission('search.invoice')
                     <li><a href="{{route('search.invoice')}}">{{ App::getLocale() === 'km' ? 'របាយការណ៍វិក្កយបត្រ' : 'Invoice Report' }}</a></li>
                     @endpermission
@@ -1075,8 +1184,8 @@ $(document).ready(function() {
                 </div>
                 <ul class="dropdown-menu-custom">
                     <li><a href="{{route('account.service')}}">{{ App::getLocale() === 'km' ? 'លក់សេវាកម្ម' : 'Service Sale' }}</a></li>
-                    <li><a href="{{route('account.opd')}}">{{ App::getLocale() === 'km' ? 'លក់ OPD' : 'OPD Sale' }}</a></li>
-                    <li><a href="{{route('account.package')}}">{{ App::getLocale() === 'km' ? 'លក់កញ្ចប់សេវា' : 'Package Sale' }}</a></li>
+                    <li><a href="{{route('account.opd')}}">{{ App::getLocale() === 'km' ? 'លក់ ' : ' Sale' }}</a></li>
+                {{--    <li><a href="{{route('account.package')}}">{{ App::getLocale() === 'km' ? 'លក់កញ្ចប់សេវា' : 'Package Sale' }}</a></li> --}}
                 </ul>
             </li>
             @endpermission

@@ -3,8 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>អរុណរះ គ្លីនិក - ចូលប្រព័ន្ធ</title>
+    <title>ARUNRASH CLINIC | អរុណរះ គ្លីនិក</title>
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Moul&display=swap" rel="stylesheet">
     <style>
         @font-face {
             font-family: 'Kantumruy Pro';
@@ -22,11 +23,19 @@
             font-style: italic;
         }
 
-        @import url('https://fonts.googleapis.com/css2?family=Moul&display=swap');
+        :root {
+            --blue:        #1769AA;
+            --blue-dark:   #0F4C81;
+            --blue-soft:   #3B82C4;
+            --blue-light:  #7DB7E8;
+            --blue-pale:   #BFE0FA;
+            --gold:        #F5C45E;
+        }
 
         body {
             font-family: 'Kantumruy Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-            background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
+            background: linear-gradient(135deg, #3B82C4 0%, #1769AA 50%, #0F4C81 100%);
+            background-attachment: fixed;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -43,66 +52,130 @@
             background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.25);
             border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 20px 40px rgba(15, 76, 129, 0.35);
         }
 
-        /* Left Side Info Panel */
+        /* ========== LEFT: INFO PANEL ========== */
         .info-panel {
             flex: 1;
-            padding: 50px;
+            min-width: 0;
+            padding: 44px 50px;
             color: #ffffff;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            background: rgba(0, 0, 0, 0.15);
-            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(15, 76, 129, 0.55);
+            border-right: 1px solid rgba(255, 255, 255, 0.12);
         }
 
-        @media (max-width: 768px) {
-            .info-panel {
-                display: none;
-            }
-            .login-container {
-                max-width: 450px;
-            }
-        }
-
+        /* Brand: English on top, Khmer below */
         .brand-logo {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-family: 'Khmer OS Muol Light', 'Khmer OS Muol', 'Moul', sans-serif !important;
-            font-weight: 500 !important;
-            font-size: 1.3rem;
-            letter-spacing: 0.5px;
+            gap: 14px;
         }
 
-        .info-title {
-            font-family: 'Khmer OS Muol Light', 'Khmer OS Muol', 'Moul', sans-serif !important;
-            font-weight: 500 !important;
-            font-size: 2rem;
-            line-height: 1.4;
-            margin-top: 30px;
-            margin-bottom: 20px;
+        .brand-logo img {
+            width: 52px;
+            height: 52px;
+            object-fit: contain;
+            border-radius: 12px;
+            background: #ffffff;
+            padding: 4px;
+        }
+
+        .brand-name {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.35;
+        }
+
+        .brand-en {
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: 4px;
+            color: #ffffff;
+        }
+
+        .brand-km {
+            font-family: 'Khmer OS Muol Light', 'Khmer OS Muol', 'Moul', sans-serif;
+            font-weight: 400;
+            font-size: 1.05rem;
+            color: var(--gold);
+            margin-top: 3px;
         }
 
         .info-desc {
             font-size: 1.05rem;
-            color: rgba(255, 255, 255, 0.85);
+            color: rgba(255, 255, 255, 0.88);
             line-height: 1.7;
-            margin-bottom: 30px;
+            margin: 26px 0 0;
+        }
+
+        /* Dental image + tooth badge */
+        .dental-image {
+            position: relative;
+            width: 100%;
+            max-width: 535px;
+            margin: 24px auto 34px;
+        }
+
+        .dental-image img {
+            display: block;
+            width: 100%;
+            height: 285px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 32px;
+            border: 3px solid rgba(255, 255, 255, 0.35);
+            box-shadow: 0 14px 30px rgba(15, 76, 129, 0.35),
+                        0 4px 10px rgba(15, 76, 129, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .dental-image img:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(15, 76, 129, 0.45);
+        }
+
+        .tooth-badge {
+            position: absolute;
+            right: -12px;
+            bottom: -24px;
+            width: 82px;
+            height: 82px;
+            border-radius: 50%;
+            background: var(--blue);
+            border: 5px solid #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            box-shadow: 0 8px 20px rgba(15, 76, 129, 0.4);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .tooth-badge svg {
+            width: 38px;
+            height: 38px;
+            color: #ffffff;
+        }
+
+        .tooth-badge:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 25px rgba(15, 76, 129, 0.5);
         }
 
         .feature-list {
             list-style: none;
             padding: 0;
-            margin: 0 0 40px 0;
+            margin: 0 0 34px 0;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 14px;
         }
 
         .feature-item {
@@ -116,34 +189,32 @@
         .check-icon {
             width: 22px;
             height: 22px;
-            color: #34d399;
+            color: var(--blue-light);
             flex-shrink: 0;
         }
 
         .stats-row {
             display: flex;
             gap: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.15);
-            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.18);
+            padding-top: 26px;
         }
 
-        .stat-item {
-            flex: 1;
-        }
+        .stat-item { flex: 1; }
 
         .stat-number {
-            font-weight: 700;
+            font-weight: 800;
             font-size: 1.6rem;
-            color: #34d399;
+            color: var(--blue-light);
         }
 
         .stat-label {
             font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255, 255, 255, 0.75);
             margin-top: 4px;
         }
 
-        /* Right Side Form Panel */
+        /* ========== RIGHT: FORM PANEL ========== */
         .form-panel {
             width: 450px;
             padding: 50px;
@@ -151,13 +222,7 @@
             flex-direction: column;
             justify-content: center;
             position: relative;
-        }
-
-        @media (max-width: 768px) {
-            .form-panel {
-                width: 100%;
-                padding: 40px 30px;
-            }
+            background: var(--blue);
         }
 
         .language-header {
@@ -189,35 +254,33 @@
             width: 24px;
             height: 15px;
             border-radius: 2px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
         }
 
         .welcome-title {
             font-family: 'Khmer OS Muol Light', 'Khmer OS Muol', 'Moul', sans-serif !important;
-            font-weight: 500 !important;
-            font-size: 1.8rem;
+            font-weight: 400 !important;
+            font-size: 1.7rem;
             color: #ffffff;
-            margin-bottom: 8px;
+            margin: 10px 0 8px;
             text-align: center;
-            line-height: 1.4;
+            line-height: 1.5;
         }
 
         .welcome-subtitle {
             font-size: 1rem;
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.85);
             margin-bottom: 35px;
             text-align: center;
         }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
+        .form-group { margin-bottom: 20px; }
 
         .form-label {
             display: block;
             font-weight: 600;
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.95);
             margin-bottom: 8px;
             letter-spacing: 0.5px;
         }
@@ -226,7 +289,7 @@
             width: 100%;
             height: 50px;
             background: rgba(255, 255, 255, 0.1) !important;
-            border: 1.5px solid rgba(255, 255, 255, 0.2) !important;
+            border: 1.5px solid rgba(255, 255, 255, 0.3) !important;
             border-radius: 10px !important;
             padding: 0 16px !important;
             color: #ffffff !important;
@@ -237,20 +300,20 @@
         }
 
         .form-control-custom::placeholder {
-            color: rgba(255, 255, 255, 0.5) !important;
+            color: rgba(255, 255, 255, 0.55) !important;
         }
 
         .form-control-custom:focus {
-            background: rgba(255, 255, 255, 0.15) !important;
-            border-color: #34d399 !important;
-            box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.15) !important;
+            background: rgba(255, 255, 255, 0.16) !important;
+            border-color: var(--blue-light) !important;
+            box-shadow: 0 0 0 4px rgba(125, 183, 232, 0.25) !important;
         }
 
         .form-options {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 30px;
+            margin-bottom: 28px;
             font-size: 0.95rem;
         }
 
@@ -258,7 +321,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            color: rgba(255, 255, 255, 0.85);
+            color: rgba(255, 255, 255, 0.9);
             cursor: pointer;
             user-select: none;
             margin: 0;
@@ -268,59 +331,88 @@
         .checkbox-custom {
             width: 18px;
             height: 18px;
-            accent-color: #10b981;
+            accent-color: var(--blue-dark);
             cursor: pointer;
         }
 
+        /* White button on blue background */
         .login-btn {
             width: 100%;
             height: 50px;
-            background-color: #10b981;
+            background-color: #ffffff;
             border: none;
             border-radius: 10px;
-            color: #ffffff;
-            font-weight: 700;
+            color: var(--blue-dark);
+            font-weight: 800;
             font-size: 1.05rem;
             cursor: pointer;
             transition: all 0.2s;
-            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+            box-shadow: 0 4px 12px rgba(15, 76, 129, 0.3);
         }
 
         .login-btn:hover {
-            background-color: #059669;
-            box-shadow: 0 6px 16px rgba(16, 185, 129, 0.35);
+            background-color: var(--blue-pale);
+            box-shadow: 0 6px 16px rgba(15, 76, 129, 0.4);
+            transform: translateY(-1px);
         }
 
         .alert-custom {
-            background-color: rgba(239, 68, 68, 0.2) !important;
-            border: 1px solid rgba(239, 68, 68, 0.3) !important;
-            color: #fca5a5 !important;
+            background-color: rgba(239, 68, 68, 0.22) !important;
+            border: 1px solid rgba(254, 202, 202, 0.5) !important;
+            color: #fee2e2 !important;
             border-radius: 10px;
             padding: 12px 16px;
             margin-bottom: 25px;
             font-size: 0.95rem;
             font-weight: 500;
         }
+
+        /* ========== LARGER TEXT ========== */
+        .brand-en        { font-size: 1.8rem; }
+        .brand-km        { font-size: 1.3rem; }
+        .info-desc       { font-size: 1.25rem; }
+        .feature-item    { font-size: 1.15rem; }
+        .check-icon      { width: 26px; height: 26px; }
+        .stat-number     { font-size: 2rem; }
+        .stat-label      { font-size: 1rem; }
+        .welcome-title   { font-size: 2rem; }
+        .welcome-subtitle{ font-size: 1.15rem; }
+        .form-label      { font-size: 1.1rem; }
+        .form-control-custom { height: 54px; font-size: 1.15rem !important; }
+        .form-options    { font-size: 1.1rem; }
+        .checkbox-custom { width: 20px; height: 20px; }
+        .login-btn       { height: 54px; font-size: 1.2rem; }
+        .alert-custom    { font-size: 1.05rem; }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 1100px) {
+            .info-panel { padding: 36px 32px; }
+            .dental-image img { height: 245px; }
+        }
+
+        @media (max-width: 768px) {
+            .info-panel { display: none; }
+            .login-container { max-width: 450px; }
+            .form-panel { width: 100%; padding: 40px 30px; }
+        }
     </style>
 </head>
 <body>
 
     <div class="login-container">
-        <!-- Left Side Info -->
+
+        <!-- ===== Left Side Info ===== -->
         <div class="info-panel">
+
             <div class="brand-logo">
-                <img src="/logo_favicon.png" alt="Logo" class="brand-svg-icon" style="width:36px; height:36px; object-fit:contain; border-radius:4px; margin-right:6px;" />
-                <span>{{ App::getLocale() === 'km' ? 'អរុណរះ គ្លីនិក' : 'ARUNRASH CLINIC' }}</span>
+                <img src="/logo_favicon.png" alt="Logo">
+                <div class="brand-name">
+                    <span class="brand-en">ARUNRASH CLINIC</span>
+                    <span class="brand-km">អរុណរះ គ្លីនិក</span>
+                </div>
             </div>
 
             <div>
-                <h2 class="info-title">
-                    @if(App::getLocale() === 'km')
-                        អរុណរះ គ្លីនិក
-                    @else
-                        ARUNRASH CLINIC
-                    @endif
-                </h2>
                 <p class="info-desc">
                     @if(App::getLocale() === 'km')
                         ជម្រើសដ៏ល្អបំផុតចាប់តាំងពីឆ្នាំ ២០១៦។ មុខងារលំដាប់ខ្ពស់ដើម្បីគ្រប់គ្រងផ្នែក ជំនួប ការចេញវិក្កយបត្រ ការធ្វើតេស្តមន្ទីរពិសោធន៍ និងបុគ្គលិកគ្លីនិក។
@@ -329,29 +421,30 @@
                     @endif
                 </p>
 
+                <div class="dental-image">
+                    <img src="{{ asset('images/dental clinic.png') }}" alt="Dental Clinic">
+                    <div class="tooth-badge">
+                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.5 2C5 2 3 3.9 3 6.5c0 1.6.6 2.6 1.1 3.9.6 1.6.6 3.3 1 5.1.4 2.1 1.1 4.5 2.6 4.5 1.3 0 1.4-1.7 1.8-3.4.3-1.3.6-2.1 1.5-2.1s1.2.8 1.5 2.1c.4 1.7.5 3.4 1.8 3.4 1.5 0 2.2-2.4 2.6-4.5.4-1.8.4-3.5 1-5.1.5-1.3 1.1-2.3 1.1-3.9C21 3.9 19 2 16.5 2c-1.8 0-2.7.9-4.5.9S9.3 2 7.5 2z"/>
+                        </svg>
+                    </div>
+                </div>
+
                 <ul class="feature-list">
                     <li class="feature-item">
-                        <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                        </svg>
+                        <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                         <span>{{ App::getLocale() === 'km' ? 'ការចុះឈ្មោះអ្នកជំងឺលឿន និងមានសុវត្ថិភាព' : 'Fast & secure patient registration' }}</span>
                     </li>
                     <li class="feature-item">
-                        <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                        </svg>
+                        <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                         <span>{{ App::getLocale() === 'km' ? 'របាយការណ៍ធ្វើតេស្តមន្ទីរពិសោធន៍ និងការពិនិត្យពេញលេញ' : 'Complete lab test & examination reports' }}</span>
                     </li>
                     <li class="feature-item">
-                        <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                        </svg>
+                        <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                         <span>{{ App::getLocale() === 'km' ? 'ការចេញវិក្កយបត្រវិជ្ជាជីវៈ និងរបាយការណ៍លក់ហិរញ្ញវត្ថុ' : 'Professional invoicing & financial sales reports' }}</span>
                     </li>
                     <li class="feature-item">
-                        <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                        </svg>
+                        <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                         <span>{{ App::getLocale() === 'km' ? 'ការគ្រប់គ្រងតួនាទី និងការអនុញ្ញាតដែលអាចបត់បែនបាន' : 'Flexible roles & permissions management' }}</span>
                     </li>
                 </ul>
@@ -373,9 +466,9 @@
             </div>
         </div>
 
-        <!-- Right Side Form -->
+        <!-- ===== Right Side Form ===== -->
         <div class="form-panel">
-            <!-- Language switcher top right of form card -->
+
             <div class="language-header">
                 <a href="{{ route('lang.switch', 'en') }}" class="lang-flag-btn {{ App::getLocale() === 'en' ? 'active' : '' }}" title="English">
                     <svg class="flag-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7410 3900"><rect width="7410" height="3900" fill="#b22234"/><path d="M0,0H2964V2100H0Z" fill="#3c3b6e"/><g fill="#fff"><g id="s18_flag"><g id="s9_flag"><g id="s5_flag"><g id="s_flag"><polygon points="247,0 307,185 160,72 334,72 187,185"/></g><use href="#s_flag" x="494"/><use href="#s_flag" x="988"/><use href="#s_flag" x="1482"/><use href="#s_flag" x="1976"/></g><use href="#s_flag" x="247" y="175"/><use href="#s_flag" x="741" y="175"/><use href="#s_flag" x="1235" y="175"/><use href="#s_flag" x="1729" y="175"/><use href="#s_flag" x="2223" y="175"/></g><use href="#s9_flag" y="350"/></g><use href="#s18_flag" y="700"/><use href="#s9_flag" y="1400"/><use href="#s5_flag" y="1050"/><use href="#s_flag" x="247" y="1050"/><use href="#s_flag" x="741" y="1050"/><use href="#s_flag" x="1235" y="1050"/><use href="#s_flag" x="1729" y="1050"/><use href="#s_flag" x="2223" y="1050"/></g><rect y="300" width="7410" height="300" fill="#fff"/><rect y="900" width="7410" height="300" fill="#fff"/><rect y="1500" width="7410" height="300" fill="#fff"/><rect y="2100" width="7410" height="300" fill="#fff"/><rect y="2700" width="7410" height="300" fill="#fff"/><rect y="3300" width="7410" height="300" fill="#fff"/></svg>
@@ -398,7 +491,7 @@
 
             <form role="form" method="POST" action="{{ route('login') }}">
                 {{ csrf_field() }}
-                
+
                 <div class="form-group">
                     <label class="form-label">{{ App::getLocale() === 'km' ? 'ឈ្មោះអ្នកប្រើប្រាស់:' : 'Username:' }}</label>
                     <input class="form-control-custom" placeholder="{{ App::getLocale() === 'km' ? 'បញ្ចូលឈ្មោះអ្នកប្រើប្រាស់' : 'Enter username' }}" name="name" type="text" autofocus required>
